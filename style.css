@@ -10,20 +10,26 @@
   --font-family: "Roboto Mono", sans-serif;
 }
 
-p {
+html {
   margin: 0;
+  padding: 0;
 }
 
 body {
   background: linear-gradient(35deg, #ccffff, #ffcccc);
   min-height: 100vh;
   font-family: var(--font-family);
+  margin: 0;
+  padding: 0;
 }
 
-main {
-  display: -ms-grid;
-  display: grid;
-  place-items: center;
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
 .form-container {
@@ -32,8 +38,9 @@ main {
   background: #fff;
   border-radius: var(--form-border-radius);
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-  max-width: 75vw;
-  margin-top: 2rem;
+  max-width: 1150px;
+  margin: auto;
+  margin-block: 2rem;
 }
 
 .fcc-brand-aside {
@@ -56,12 +63,15 @@ main {
   flex-direction: column;
   gap: 2rem;
   padding: 2rem;
-  width: 100%;
 }
 
-.form-header {
+header {
   border-bottom: 1px solid var(--fcc-brand-gray-15);
   text-align: center;
+}
+
+header p {
+  margin-bottom: 3rem;
 }
 
 #survey-form {
@@ -96,12 +106,16 @@ main {
 
 .form-group input,
 .form-group select {
-  width: 100%;
   max-height: 2.5rem;
   padding: 0.5rem;
   border: 1px solid var(--fcc-brand-gray-15);
   border-radius: 5px;
   font-family: var(--font-family);
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"] {
+  min-width: 400px;
 }
 
 input::placeholder {
@@ -117,6 +131,7 @@ select:focus {
 
 input[name="score"] {
   width: max-content;
+  min-width: unset;
 }
 
 .form-item-checkbox {
@@ -142,4 +157,92 @@ input[name="score"] {
 .form-item-radio input:checked,
 .form-item-checkbox input:checked {
   background-color: var(--fcc-brand-color);
+}
+
+.form-item.comments {
+  flex-direction: column !important;
+}
+
+.form-item.comments .label-base {
+  align-self: unset;
+}
+
+.form-item.comments textarea {
+  padding: 0.5rem;
+  border: 1px solid var(--fcc-brand-gray-15);
+  border-radius: 5px;
+  font-family: var(--font-family);
+}
+
+.form-group.submit {
+  display: grid;
+  place-items: center;
+}
+
+button[type="submit"] {
+  padding: 1rem 2rem;
+  background-color: var(--fcc-brand-light-green);
+  border: none;
+  border-radius: 10px;
+  font-family: var(--font-family);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button[type="submit"]:hover {
+  background-color: var(--fcc-brand-gray-75);
+}
+
+footer {
+  display: -ms-grid;
+  display: grid;
+  place-items: center;
+  margin-block: 1rem;
+  gap: 0.75rem;
+}
+
+footer .github a {
+  height: 24px;
+}
+
+@media (max-width: 975px) {
+  main {
+    margin-inline: 1rem;
+  }
+  .form-container {
+    flex-direction: column;
+  }
+
+  .form-main {
+    padding-inline: 1rem;
+  }
+
+  .fcc-brand-aside {
+    padding: 0;
+    border-top-right-radius: var(--form-border-radius);
+    border-bottom-left-radius: 0;
+    width: 100%;
+  }
+
+  .fcc-logo-wrapper {
+    padding-block: 1rem;
+  }
+
+  .form-item {
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+
+  .label-base {
+    align-self: unset;
+  }
+
+  .form-group input[type="text"],
+  .form-group input[type="email"],
+  .form-group input[type="number"],
+  .form-group select {
+    min-width: unset;
+  }
 }
