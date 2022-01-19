@@ -13,6 +13,7 @@ Time to put your newly learnt skills to work. By working on these projects, you 
 - use HTML, JavaScript, and CSS to complete this project
 
 **Output**:
+
 ![alt text](https://github.com/lanzoninicola/fcc-survey-form/blob/master/assets/images/output.png?raw=true)
 
 ### User Stories:
